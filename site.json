@@ -1,0 +1,22 @@
+{
+  "title": "IT Technologies",
+  "tagline": "Technology That Moves You Forward",
+  "description": "We build reliable technology solutions that help businesses work smarter.",
+  "buttonText": "Contact Us",
+  "email": "info@example.com",
+  "services": [
+    {
+      "name": "Web Development",
+      "description": "Modern, responsive websites for your business."
+    },
+    {
+      "name": "IT Support",
+      "description": "Reliable technical support and infrastructure services."
+    },
+    {
+      "name": "Cloud Solutions",
+      "description": "Scalable cloud solutions for growing businesses."
+    }
+  ],
+  "footer": "© 2026 IT Technologies. All rights reserved."
+}

@@ -1,0 +1,38 @@
+stages:
+  - build
+  - test
+  - publish
+
+default:
+  tags:
+    - ci
+
+build_website:
+  stage: build
+  script:
+    - Write-Host "Building website..."
+    - '& .\scripts\build.ps1'
+  artifacts:
+    paths:
+      - build/
+    expire_in: 7 days
+
+test_website:
+  stage: test
+  script:
+    - Write-Host "Running website tests..."
+    - '& .\scripts\test.ps1'
+
+publish_website:
+  stage: publish
+  script:
+    - Write-Host "Checking website package..."
+    - if (-not (Test-Path "build\index.html")) { throw "Website HTML is missing." }
+    - if (-not (Test-Path "build\style.css")) { throw "Website CSS is missing." }
+    - Write-Host "Website package is ready!"
+  artifacts:
+    name: "generated-website"
+    paths:
+      - build/
+    expire_in: 30 days
+
